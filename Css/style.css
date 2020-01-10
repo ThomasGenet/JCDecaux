@@ -29,7 +29,7 @@ var{
 /*Navigation*/
 nav {
     background-color: ##fff;
-    widows: 100%;
+    width: 100%;
     height: 3em;
     border-bottom: 1px solid black;
 }
@@ -72,8 +72,9 @@ h1{
     margin-bottom: 2em;
 }
 #diaporama {
-    height: 500px;
+    height: 10%;
     width: 80%;
+    max-width: 100%;
 }
 
 #img {
@@ -89,14 +90,16 @@ h1{
 figure{
     display: flex;
     flex-flow: column;
-    
     position: relative;
+    
 }
 figcaption{
     display: block;
-    top: 20em;
+    top: 10em;
     left: 25em;
     position: absolute;
+    color: #000;
+    background-color: rgba(255, 255,255, 0.5);
 }
 
 /*Carte interactive*/
