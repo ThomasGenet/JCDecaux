@@ -33,7 +33,7 @@ body {
 
 /*Navigation*/
 nav {
-    background-color: ##fff;
+    background-color: ##ffffff;
     width: 100%;
     height: 3em;
     border-bottom: 1px solid black;
@@ -87,7 +87,7 @@ h1 {
     margin-bottom: 40px;
 }
 
-.cadre-diapo {
+.cadrediapo {
     min-height: 400px;
     max-height: 600px;
     position: relative;
@@ -118,11 +118,11 @@ figcaption {
     color: silver;
     transition: color .4s linear;
     transform: translatey(-50%);
-    top: 80%;
+    top: 50%;
     padding: .5rem;
-    font-size: 2rem;
+    font-size: 3rem;
     background: none;
-    position: relative;
+    position: absolute;
     border: none;
     text-decoration: none;
     cursor: pointer;
@@ -139,6 +139,15 @@ figcaption {
 .suivant{
     right:-310px
 }
+.play{
+    font-size: large;
+    top: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 
 /*Carte interactive*/

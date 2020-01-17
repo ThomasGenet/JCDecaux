@@ -23,5 +23,37 @@ for (i = 0; i < indic.length; i++) {
 indic[i].className = indic[i].className.replace(" numeros", "");
 }
 diapoImg[diaporama-1].style.opacity = "1";
-indic[diaporama-1].className += " numeros";
+
 }
+
+/* Play / stop */
+var slide = document.querySelector('#diaporama')
+var slides = slide.querySelectorAll('.cadre-diapo .diapo');
+var currentSlide = 0;
+var slideInterval = setInterval(nextSlide,2000);
+
+function nextSlide(){
+	slides[currentSlide].className = 'diapo';
+	currentSlide = (currentSlide+1)%slides.length;
+	slides[currentSlide].idName = 'diapo1';
+}
+
+var playing = true;
+var pauseButton = document.getElementById('pause');
+
+function pauseSlideshow(){
+	pauseButton.innerHTML = 'Play';
+	playing = false;
+	clearInterval(slideInterval);
+}
+
+function playSlideshow(){
+	pauseButton.innerHTML = 'Pause';
+	playing = true;
+	slideInterval = setInterval(nextSlide,2000);
+}
+
+pauseButton.onclick = function(){
+	if(playing){ pauseSlideshow(); }
+	else{ playSlideshow(); }
+};
