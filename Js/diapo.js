@@ -30,13 +30,8 @@ diapoImg[diaporama-1].style.opacity = "1";
 var slide = document.querySelector('#diaporama')
 var slides = slide.querySelectorAll('.cadre-diapo .diapo');
 var currentSlide = 0;
-var slideInterval = setInterval(nextSlide,2000);
+//var slideInterval = setInterval(nextSlide,2000);
 
-function nextSlide(){
-	slides[currentSlide].className = 'diapo';
-	currentSlide = (currentSlide+1)%slides.length;
-	slides[currentSlide].idName = 'diapo1';
-}
 
 var playing = true;
 var pauseButton = document.getElementById('pause');
@@ -50,7 +45,10 @@ function pauseSlideshow(){
 function playSlideshow(){
 	pauseButton.innerHTML = 'Pause';
 	playing = true;
-	slideInterval = setInterval(nextSlide,2000);
+	slideInterval = setInterval(function(){
+		boutons(1);
+	}
+	,2000);
 }
 
 pauseButton.onclick = function(){
