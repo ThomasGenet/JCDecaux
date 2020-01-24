@@ -7,7 +7,7 @@ class slider {
         this.btnNext = container.querySelector('.suivant');
         this.btnPause = container.querySelector('#pause');
         this.lastIndex = this.slides.length - 1;
-        v
+        
 
         //Initialise les évènements
         this.bindEvents();
