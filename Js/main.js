@@ -35,3 +35,16 @@ btnNext.onclick = function (){
 btnPrev.onclick = function (){
 	monSlider.affichage (monSlider.diaporama - 1);
 }
+
+document.onkeydown = function(e) {
+	switch (e.keyCode) {
+		case 37:
+		   //left
+		   monSlider.affichage (monSlider.diaporama - 1);
+		   break;
+		case 39:
+		   //right
+		   monSlider.affichage (monSlider.diaporama + 1);
+		   break;          
+   }
+}
