@@ -49,3 +49,16 @@ document.onkeydown = function (e) {
 			break;
 	}
 }
+
+// Marker start
+var marker1 = new L.marker ([50.63333, 3.0667]);
+marker1.mapToAdd(maCarte);
+console.log('marker1');
+
+function clicMarker(){
+	alert("cliqué"+this.number);
+	console.log('clicMarker')
+}
+marker1.number = 1;
+
+marker1.addEventListener('click',clicMarker);
