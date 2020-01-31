@@ -50,15 +50,32 @@ document.onkeydown = function (e) {
 	}
 }
 
-// Marker start
-var marker1 = new L.marker ([50.63333, 3.0667]);
-marker1.mapToAdd(maCarte);
+//var maCarte = initMap(lat, lon); 
+      
+/*Marker start
+var marker1 = new L.marker ([50.63333, 3.0667], 11);
 console.log('marker1');
+
+
 
 function clicMarker(){
 	alert("cliqué"+this.number);
-	console.log('clicMarker')
-}
+	console.log('clicMarker');
+};
+console.log('clicMar');
+
 marker1.number = 1;
 
 marker1.addEventListener('click',clicMarker);
+console.log('Listen');
+
+marker1.addTo(maCarte);
+console.log('marker2');
+
+// https://api.jcdecaux.com/vls/v1/stations?contract=lille&apiKey=ab8ddcadd4505d6df9e077b7e932033e531013fa
+//https://api.jcdecaux.com/vls/v3/stations?contract=bruxelles&apiKey=ab8ddcadd4505d6df9e077b7e932033e531013fa
+//https://api.jcdecaux.com/vls/v3/contracts?apiKey=ab8ddcadd4505d6df9e077b7e932033e531013fa
+*/
+let mymap = new Map ("map");
+
+mymap.affichage(mymap.map);

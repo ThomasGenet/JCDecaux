@@ -14,7 +14,6 @@ class Slider {
 			
 			this.diapoImg[i].style.opacity = "0";
 			}
-
 			this.diapoImg[(this.diaporama)-1].style.opacity = "1";
 	}
 }
