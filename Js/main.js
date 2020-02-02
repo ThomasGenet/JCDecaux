@@ -48,14 +48,21 @@ document.onkeydown = function (e) {
 			monSlider.affichage(monSlider.diaporama + 1);
 			break;
 	}
-}      
+}
 /*Marker start
-
 
 // https://api.jcdecaux.com/vls/v1/stations?contract=lille&apiKey=ab8ddcadd4505d6df9e077b7e932033e531013fa
 //https://api.jcdecaux.com/vls/v3/stations?contract=bruxelles&apiKey=ab8ddcadd4505d6df9e077b7e932033e531013fa
 //https://api.jcdecaux.com/vls/v3/contracts?apiKey=ab8ddcadd4505d6df9e077b7e932033e531013fa
 */
-let mymap = new Map ("map",50.850340,4.351710);
+
+// Affichage de la carte
+let mymap = new Map("map", 50.850340, 4.351710);
 
 mymap.affichage();
+
+// Affichage des markers
+
+let marker = new Marker("marker", 50.850340, 4.351710);
+
+marker.addMarker();
