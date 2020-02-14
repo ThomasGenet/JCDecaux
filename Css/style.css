@@ -160,6 +160,27 @@ figcaption {
     margin: auto;
 }
 
+/*Info station*/
+#infostation{
+    background-color: #a5a5a5;
+    width: 70%;
+    height: 200px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: initial;
+}
+#infostation h3{
+    font-size: x-large;
+}
+#infostation h3, #infostation div{
+    margin: 2em;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    margin: 2em;
+}
 /*Footer*/
 footer {
     background-color: #a5a5a5;

@@ -1,19 +1,32 @@
-class Marker{
-    constructor(markerStation, latit, longit){
-        this.marker = document.getElementById("marker");
-        this.markerStation = markerStation;
-        this.icon;
-        this.icontest = ({
-            iconSrc = 'https://www.google.com/search?q=marqueur+png&sxsrf=ACYBGNT1e0pq4tdM0O5KnXsR0-fKcCPEAA:1580664688483&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiLjZDqsrPnAhUox4UKHdZWDfUQ_AUoAXoECAsQAw&biw=1440&bih=789#imgrc=Y33S1Fv-NnvdLM:',
-            iconSize = [25, 25]
-        })
+class Marker {
+    constructor(status, latit, longit, carte) {
         this.lat = latit;
-        this.long = longit;
-        
-        
+        this.lon = longit;
+        this.carte = carte;
+        this.status = status;
+        this.iconStationClose = new L.Icon({
+            iconUrl : "./Img/iconclose.png",
+            iconSize : [30,36]
+        });
+        this.iconStationFree = new L.Icon({
+            iconUrl : "./Img/iconopen.png",
+            iconSize : [30,36]
+        });
 
     }
-    addMarker(){
-        this.icon = L.marker(this.marker).setView([this.lat,this.long]) {icon: this.icontest}
-    }.addTo(this.icon);
+
+    addIconStation() {
+        
+        switch (this.status) {
+            case "OPEN":
+                
+                this.markerStation = new L.marker([this.lat, this.lon] ,{icon : this.iconStationFree});
+                break;
+            case "CLOSED":
+                this.markerStation = new L.marker([this.lat, this.lon], {icon : this.iconStationClose});
+                break;
+        }
+        
+    }
+
 }
