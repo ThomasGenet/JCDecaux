@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
         integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
         crossorigin="" />
-        <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.css" />
-        <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.Default.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.Default.css" />
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,21 +16,21 @@
 
 <body>
     <nav>
-        <img src="" alt="" id="logo">
+        <img src="./Img/logojcd.png" alt="logo-jcdecaux" id="logo">
 
         <ul>
             <li> <a href="#diaporama">Accueil</a></li>
             <li><a href="#map">Carte</a></li>
         </ul>
     </nav>
-    
+
 
     <section id="diaporama">
         <h1>Fonctionnement de l'application</h1>
         <div class="line"> </div>
 
         <div class="cadrediapo">
-            
+
             <figure class="diapo">
                 <img src="./Img/01.jpg" alt="">
                 <figcaption>Sélectionner une zone</figcaption>
@@ -43,40 +43,45 @@
                 <img src="./Img/03.jpg" alt="">
                 <figcaption>Réserver un vélo</figcaption>
             </figure>
-            <button class ="precedent" id="precedent">&#9001;</button>
-            <button class ="suivant" id="suivant">&#9002;</button>
+            <button class="precedent" id="precedent">&#9001;</button>
+            <button class="suivant" id="suivant">&#9002;</button>
             <button class="play" id="pause">Pause</button>
         </div>
 
     </section>
-    <div id="map">
-        <!-- Ici s'affichera la carte -->
-    </div>
-    <div id="infostation">
-        <h3>Station <br></h3>
-        <div>
-            <p class="info_bike" >Station : <span id="namestation"></span> </p>
-            <p class="info_bike" >Adresse : <span id="adress"></span> </p>
-            <p class="info_bike" > <span id="nb_bike"></span> vélo(s) disponible(s). </p>
-            <p class="info_bike" > <span id="nb_bike_stands"></span> place(s) disponbile(s) </p>
-            <p class="info_bike" >Statut de la station : <span id="station_status"></span></p>
-            
+    <section id="mapreserv">
+        <div id="map">
+            <!-- Ici s'affichera la carte -->
         </div>
-        <form action="" id="form">
-            <label for="prenom">Prénom :</label>
-            <input type="text" id="prenom">
-            
-            <label for="Nom">Nom :</label>
-            <input type="text" id="nom">
-            
-            <button class="reserver" id="reserver">Réserver</button>
-        </form>
-    </div>
+        <div id="infostation">
+            <h3>Station <br></h3>
+            <div>
+                <p class="info_bike">Station : <span id="namestation"></span> </p>
+                <br>
+                <p class="info_bike">Adresse : <span id="adress"></span> </p>
+                <br>
+                <p class="info_bike"> <span id="nb_bike"></span> vélo(s) disponible(s). </p>
+                <br>
+                <p class="info_bike"> <span id="nb_bike_stands"></span> place(s) disponbile(s) </p>
+                <br>
+                <p class="info_bike">Statut de la station : <span id="station_status"></span></p>
 
+            </div>
+            <form action="" id="form">
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom">
+
+                <label for="Nom">Nom :</label>
+                <input type="text" id="nom">
+
+                <button class="reserver" id="reserver">Réserver</button>
+            </form>
+        </div>
+    </section>
     <footer>
         <p id="test">Copyright 2020</p>
     </footer>
-    
+
     <!--Leaflet script js-->
     <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
         integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
@@ -90,7 +95,7 @@
     <script type="text/javascript" src="./Js/marker.js"></script>
     <script type="text/javascript" src="./Js/map.js"></script>
     <script type="text/javascript" src="./Js/main.js"></script>
-    
+
 </body>
 
 </html>
