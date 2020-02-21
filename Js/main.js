@@ -59,4 +59,23 @@ let mymap = new Map("map", 50.850340, 4.351710);
 mymap.affichage();
 mymap.addIconMarker();
 
+//Affichage bouton "réserver vélo"
+let infoReserver = document.getElementById('inforeserver');
+let btnInfoReserver = document.getElementById('reserver');
+let nbbike = document.getElementById('nb_bike');
 
+let boutonReserverVelo = function(){
+	infoReserver.style.display = "block";
+	btnInfoReserver.style.display = "block";
+	btnInfoReserver.innerHTML = "Réserver un vélo";
+};
+
+let etatReservation = function(){
+	if (nbbike > 0){
+		infoReserver.innerHTML = "Pas de vélo disponible; Impossible de réserver."
+		infoReserver();
+	}
+	else{
+		btnInfoReserver();
+}
+}

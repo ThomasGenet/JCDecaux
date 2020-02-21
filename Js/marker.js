@@ -19,7 +19,6 @@ class Marker {
         
         switch (this.status) {
             case "OPEN":
-                
                 this.markerStation = new L.marker([this.lat, this.lon] ,{icon : this.iconStationFree});
                 break;
             case "CLOSED":

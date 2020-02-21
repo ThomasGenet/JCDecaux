@@ -28,27 +28,35 @@ class Map {
                     let monMarker = new Marker(station.status, station.position.latitude, station.position.longitude, this.maCarte); //latitude & longitude sont toruvé sur l'api jcdecaux
                     monMarker.addIconStation();
 
-                    monMarker.markerStation.addEventListener("click",function(){
+                    
+                    monMarker.markerStation.addEventListener("click",function (){
                         // alert ('click');
+                        const number = station.number;
+                        
+                        let request2 = new XMLHttpRequest();
+                        request2.onreadystatechange = function(){
+                            if (this.readyState == XMLHttpRequest.DONE && this.status == 200){
+                                var response2 = JSON.parse(this.responseText);
+                                console.log(response2);
                         const nom = document.getElementById ("namestation");
-                        nom.innerHTML = station.name;
+                        nom.innerHTML = response2.name;
                         const adresse = document.getElementById("adress");
-                        adresse.innerHTML = station.address;
+                        adresse.innerHTML = response2.address;
                         const nbbike = document.getElementById("nb_bike");
-                        nbbike.innerHTML = station.totalStands.capacity;
+                        nbbike.innerHTML = response2.totalStands.capacity;
                         const stands = document.getElementById("nb_bike_stands");
-                        stands.innerHTML = station.totalStands.availabilities.stands;
+                        stands.innerHTML = response2.totalStands.availabilities.stands;
                         const status = document.getElementById("station_status");
-                        status.innerHTML = station.status
+                        status.innerHTML = response2.status;
+                            }
+                        }
+                        request2.open("GET", "https://api.jcdecaux.com/vls/v3/stations/"+number+"?contract=bruxelles&apiKey=ab8ddcadd4505d6df9e077b7e932033e531013fa");
+                        request2.send();
                     });
-                    
-                    
-                    markers.addLayer(monMarker.markerStation);
-                    
+                    markers.addLayer(monMarker.markerStation); 
                 });
                 this.maCarte.addLayer(markers);
-            }
-            
+            }  
         };
         // https://api.jcdecaux.com/vls/v1/stations?contract=lille&apiKey=ab8ddcadd4505d6df9e077b7e932033e531013fa
         //https://api.jcdecaux.com/vls/v3/stations?contract=bruxelles&apiKey=ab8ddcadd4505d6df9e077b7e932033e531013fa
