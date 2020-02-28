@@ -78,3 +78,34 @@ let etatReservation = function () {
 		btnInfoReserver();
 	}
 }
+
+//Vérification nom & prenom
+let nom = document.getElementById('nom');
+let prenom = document.getElementById('prenom');
+sessionStorage.setItem('length',document.getElementById('nom').value);
+sessionStorage.setItem('length',document.getElementById('prenom').value);
+
+function verifNom(nom){
+	if(nom.value.lenght < 2 || nom.value.length > 25)
+	{
+	   return false;
+	
+	}
+	else
+	{
+	   return true;
+	   
+	};
+}
+console.log(verifNom);
+function verifPrenom(prenom){
+	if(prenom.value.lenght < 2 || prenom.value.length > 25)
+	{
+	   return false;
+	}
+	else
+	{
+	   return true;
+	};
+}
+console.log(verifPrenom);

@@ -227,6 +227,8 @@ var{
     canvas {
         width: 80%;
         height: 250px;
+        border: 1px solid green;
+        margin-bottom: 1em;
     }
 
     /*Footer*/
