@@ -64,6 +64,7 @@ let infoReserver = document.getElementById('inforeserver');
 let btnInfoReserver = document.getElementById('reserver');
 let nbbike = document.getElementById('nb_bike');
 
+
 let boutonReserverVelo = function () {
 	infoReserver.style.display = "block";
 	btnInfoReserver.style.display = "block";
@@ -80,13 +81,13 @@ let etatReservation = function () {
 }
 
 //Vérification nom & prenom
+//Transformer en objet
 let nom = document.getElementById('nom');
 let prenom = document.getElementById('prenom');
-sessionStorage.setItem('length',document.getElementById('nom').value);
-sessionStorage.setItem('length',document.getElementById('prenom').value);
+console.log(nom.value);
 
 function verifNom(nom){
-	if(nom.value.lenght < 2 || nom.value.length > 25)
+	if(nom.value.length < 2 || nom.value.length > 25)
 	{
 	   return false;
 	
@@ -97,9 +98,10 @@ function verifNom(nom){
 	   
 	};
 }
-console.log(verifNom);
+console.log(verifNom(nom));
+
 function verifPrenom(prenom){
-	if(prenom.value.lenght < 2 || prenom.value.length > 25)
+	if(prenom.value.length < 2 || prenom.value.length > 25)
 	{
 	   return false;
 	}
@@ -108,4 +110,15 @@ function verifPrenom(prenom){
 	   return true;
 	};
 }
-console.log(verifPrenom);
+console.log(verifPrenom(prenom));
+
+localStorage.setItem('nom',document.getElementById('nom').value);
+localStorage.setItem('prenom',document.getElementById('prenom').value);
+
+
+
+//let canvas = document.getElementById('canvas');
+
+//btnInfoReserver.onclick = function(){
+//	canvas.style.
+//}
