@@ -65,60 +65,22 @@ let btnInfoReserver = document.getElementById('reserver');
 let nbbike = document.getElementById('nb_bike');
 
 
-let boutonReserverVelo = function () {
-	infoReserver.style.display = "block";
-	btnInfoReserver.style.display = "block";
-	btnInfoReserver.innerHTML = "Réserver un vélo";
-};
-
-let etatReservation = function () {
-	if (nbbike > 0) {
-		infoReserver.innerHTML = "Pas de vélo disponible; Impossible de réserver."
-		infoReserver();
-	} else {
-		btnInfoReserver();
-	}
-}
-
-//Vérification nom & prenom
-//Transformer en objet
-let nom = document.getElementById('nom');
-let prenom = document.getElementById('prenom');
-console.log(nom.value);
-
-function verifNom(nom){
-	if(nom.value.length < 2 || nom.value.length > 25)
-	{
-	   return false;
+btnInfoReserver.addEventListener("click", function(e){
+	console.log('Click bouton reserver');
+	e.preventDefault();
 	
-	}
-	else
-	{
-	   return true;
-	   
-	};
-}
-console.log(verifNom(nom));
-
-function verifPrenom(prenom){
-	if(prenom.value.length < 2 || prenom.value.length > 25)
-	{
-	   return false;
-	}
-	else
-	{
-	   return true;
-	};
-}
-console.log(verifPrenom(prenom));
-
-localStorage.setItem('nom',document.getElementById('nom').value);
-localStorage.setItem('prenom',document.getElementById('prenom').value);
-
-
-
-//let canvas = document.getElementById('canvas');
-
-//btnInfoReserver.onclick = function(){
-//	canvas.style.
-//}
+			let saisienom = document.getElementById ('nom').value;
+			let saisieprenom = document.getElementById ('prenom').value;
+			let canvas = document.getElementById('canvas');
+			if((nom.value.length < 2 || nom.value.length > 25) && (prenom.value.length < 2 || prenom.value.length > 25)){
+				alert("veuillez indiquer nom et prenom dont les tailles sont comprises entre 2 et 25");
+				canvas.style.display = 'none';
+				
+			}
+			else{
+				localStorage.setItem('prenom',document.getElementById('prenom').value);
+				localStorage.setItem('nom',document.getElementById('nom').value);
+				canvas.style.display = 'block';
+				
+			}
+});

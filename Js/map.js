@@ -48,6 +48,14 @@ class Map {
                                 stands.innerHTML = response2.totalStands.availabilities.stands;
                                 const status = document.getElementById("station_status");
                                 status.innerHTML = response2.status;
+                                
+                                let btnInfoReserver = document.getElementById('reserver');
+                                if (nbbike < 1){
+                                    btnInfoReserver.style.display ='none';
+                                }
+                                else{
+                                    btnInfoReserver.style.display ='block';
+                                }
                             }
                         }
                         request2.open("GET", "https://api.jcdecaux.com/vls/v3/stations/" + number + "?contract=bruxelles&apiKey=ab8ddcadd4505d6df9e077b7e932033e531013fa");
