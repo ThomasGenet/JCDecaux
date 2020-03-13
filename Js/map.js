@@ -48,13 +48,14 @@ class Map {
                                 stands.innerHTML = response2.totalStands.availabilities.stands;
                                 const status = document.getElementById("station_status");
                                 status.innerHTML = response2.status;
-                                
+
                                 let btnInfoReserver = document.getElementById('reserver');
-                                if (nbbike < 1){
-                                    btnInfoReserver.style.display ='none';
-                                }
-                                else{
-                                    btnInfoReserver.style.display ='block';
+                                if (nbbike < 1) {
+                                    btnInfoReserver.style.display = 'none';
+                                    console.log('none')
+
+                                } else {
+                                    btnInfoReserver.style.display = 'block';
                                 }
                             }
                         }

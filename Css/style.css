@@ -232,6 +232,11 @@ var{
         border: 1px solid green;
         margin-bottom: 1em;
     }
+    #annulvalid{
+        display: flex;
+        flex-direction: row;
+        display: none;
+    }
 
     /*Footer*/
     footer {

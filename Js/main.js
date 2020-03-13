@@ -84,3 +84,27 @@ btnInfoReserver.addEventListener("click", function(e){
 				
 			}
 });
+let canvastouch = new Canvas();
+console.log (canvastouch.ctx);
+btnInfoReserver.addEventListener ('click', function (){
+	let actioncanvas = document.getElementById('annulvalid');
+    let canvas = document.getElementById('canvas');
+                                if (canvas.style.display == 'block') {
+                                    actioncanvas.style.display = 'block';
+                                } else {
+                                    actioncanvas.style.display = 'none';
+                                }
+
+
+// canvastouch.init();
+		canvas.addEventListener("touchstart", canvastouch.handleStart, false);
+        canvas.addEventListener("touchend", canvastouch.handleEnd, false);
+        canvas.addEventListener("touchcancel", canvastouch.handleCancel, false);
+        canvas.addEventListener("touchleave", canvastouch.handleLeave, false);
+       	canvas.addEventListener("touchmove", canvastouch.handleMove, false);
+//canvastouch.touchstart();
+//canvastouch.touchdeplace();
+}
+);
+
+
