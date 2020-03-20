@@ -85,7 +85,7 @@ btnInfoReserver.addEventListener("click", function(e){
 			}
 });
 let canvastouch = new Canvas();
-console.log (canvastouch.ctx);
+//console.log (canvastouch.ctx);
 btnInfoReserver.addEventListener ('click', function (){
 	let actioncanvas = document.getElementById('annulvalid');
     let canvas = document.getElementById('canvas');
@@ -94,17 +94,34 @@ btnInfoReserver.addEventListener ('click', function (){
                                 } else {
                                     actioncanvas.style.display = 'none';
                                 }
-
-
-// canvastouch.init();
-		canvas.addEventListener("touchstart", canvastouch.handleStart, false);
-        canvas.addEventListener("touchend", canvastouch.handleEnd, false);
-        canvas.addEventListener("touchcancel", canvastouch.handleCancel, false);
-        canvas.addEventListener("touchleave", canvastouch.handleLeave, false);
-       	canvas.addEventListener("touchmove", canvastouch.handleMove, false);
-//canvastouch.touchstart();
-//canvastouch.touchdeplace();
 }
 );
+
+		let annulcanvas = document.getElementById('annuler');
+		canvas.addEventListener("touchstart", (e)=>canvastouch.handleStart(e), false);
+        canvas.addEventListener("touchend", (e)=>canvastouch.handleEnd(e), false);
+        annulcanvas.addEventListener("touchcancel",(e)=> canvastouch.handleCancel(e), false);
+        canvas.addEventListener("touchleave", (e)=>canvastouch.handleLeave(e), false);
+       	canvas.addEventListener("touchmove", (e)=>canvastouch.handleMove(e), false);
+
+		// Timer
+		let timer = new Timer(1, 0);
+		timer.timeout ();
+		   let timefin = document.getElementById('reservationannulé');
+		   let validcanvas = document.getElementById ('valider');
+		   validcanvas.addEventListener ('submit', function (e){
+			   e.preventDefault();
+			   if(timer === 0){
+				timefin.style.display = 'block';
+				timefin.innerHTML= 'Votre réservation est annulé';
+			   }
+			   else{
+				   timefin.style.display = 'none';
+			   }
+		   });
+
+		   
+
+   
 
 
