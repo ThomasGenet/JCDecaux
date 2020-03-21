@@ -161,6 +161,7 @@ var{
 
     /*Carte interactive*/
     #mapreserv {
+        position: relative;
         display: flex;
         flex-direction: row;
         height: 500px;
@@ -211,8 +212,9 @@ var{
     }
 
     #form {
+        
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         margin: 2em;
     }
     #form input{
@@ -241,9 +243,8 @@ var{
         display: none;
     }
     #timer{
-        position: absolute;
-        top: 233%;
-        left: 30%;
+        position: relative;
+        top: 15em;
         margin: auto;
         padding: 1em 10em;
         border: 1px solid green;
@@ -265,17 +266,34 @@ var{
     }
 
     @media (max-width:900px) {
+        body{
+            margin: 0;
+        }
+        /*Nav*/
+        nav img{
+            left: 0;
+        }
+        nav ul{
+            left: 50%;
+        }
+        /*Cadre diapo*/
+
+        /*Map*/
         #mapreserv {
             display: flex;
             flex-direction: column;
+            height: 100%;
         }
 
         #infostation {
             width: 80%;
-            height: 5%;
+            height: 100%;
         }
 
         #form {
             width: 50%;
+        }
+        #timer{
+            padding: 2em;
         }
     }
