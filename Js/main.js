@@ -97,16 +97,16 @@ btnInfoReserver.addEventListener ('click', function (){
 }
 );
 
-		let annulcanvas = document.getElementById('annuler');
+		/*let annulcanvas = document.getElementById('annuler');
 		canvas.addEventListener("touchstart", (e)=>canvastouch.handleStart(e), false);
         canvas.addEventListener("touchend", (e)=>canvastouch.handleEnd(e), false);
         annulcanvas.addEventListener("touchcancel",(e)=> canvastouch.handleCancel(e), false);
         canvas.addEventListener("touchleave", (e)=>canvastouch.handleLeave(e), false);
        	canvas.addEventListener("touchmove", (e)=>canvastouch.handleMove(e), false);
-
+		*/
 		// Timer
 		let timer = new Timer(1, 0);
-		timer.timeout ();
+		//timer.timeout ();
 		   let timefin = document.getElementById('reservationannulé');
 		   let validcanvas = document.getElementById ('valider');
 		   validcanvas.addEventListener ('submit', function (e){
@@ -119,9 +119,3 @@ btnInfoReserver.addEventListener ('click', function (){
 				   timefin.style.display = 'none';
 			   }
 		   });
-
-		   
-
-   
-
-

@@ -31,7 +31,7 @@ class Canvas {
     }
     
     handleMove (evtmouve) {
-        console.log ('dans levtmove');
+        console.log ('dans levtmove');x
                     evtmouve.preventDefault();
                     let touches = evtmouve.changedTouches;
                     this.ctx.lineWidth = 4;
