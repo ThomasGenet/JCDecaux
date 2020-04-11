@@ -2,23 +2,25 @@ class Canvas {
     constructor() {
         this.canvas = document.getElementById("canvas");
         this.ctx = this.canvas.getContext('2d');
+        this.vide = false;
         this.painting = false;
         this.finger = false;
         this.canvas.width = 300;
         this.canvas.height = 200;
         this.clearButton = document.getElementById("clear");
-        this.ctx.lineWidth = 5;
+        this.ctx.lineWidth = 1;
         this.ctx.lineCap = "round";
         this.ctx.strokeStyle = '#000000';
-        this.startX = 0;
-        this.startY = 0;
+        this.startX = 2;
+        this.startY = 2;
 
         this.signature();
         this.clear();
 
         //Effacer
         this.clearButton.addEventListener("click", () => {
-        this.clear()
+            this.clear()
+            this.vide = false;
         });
     }
 
@@ -30,10 +32,11 @@ class Canvas {
     finishedPosition() {
         this.painting = false;
         this.ctx.beginPath();
+
     }
 
     draw(e) {
-        if(!this.painting) return;
+        if (!this.painting) return;
 
         let mouseX;
         let mouseY;
@@ -46,6 +49,8 @@ class Canvas {
             mouseY = e.touches[0].pageY - this.canvas.getBoundingClientRect().top - (e.touches[0].pageY - e.touches[0].clientY);
         }
 
+        this.vide = true;
+
         this.ctx.beginPath();
         this.ctx.moveTo(this.startX, this.startY);
         this.ctx.lineTo(mouseX, mouseY);
@@ -54,6 +59,7 @@ class Canvas {
 
         this.startX = mouseX;
         this.startY = mouseY;
+
     }
 
     signature() {
@@ -71,7 +77,7 @@ class Canvas {
             e.preventDefault();
             this.draw(e);
         }, false);
-
+        
         // pour le tactile touchStart, touchEnd et touchMove
         this.canvas.addEventListener('touchstart', (e) => {
             this.startX = e.touches[0].pageX - this.canvas.getBoundingClientRect().left;
@@ -89,6 +95,7 @@ class Canvas {
             this.finger = true;
             this.draw(e);
         }, false);
+        this.vide = true;
 
     }
 
@@ -97,4 +104,3 @@ class Canvas {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
 }
-

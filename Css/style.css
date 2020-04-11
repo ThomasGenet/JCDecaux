@@ -94,21 +94,23 @@ var{
     }
 
     .cadrediapo {
-        min-height: 400px;
-        max-height: 600px;
-        position: relative;
-        margin: auto;
+        height: 500px;
+        width: 100%;
+        position: static;
+        
     }
 
     figure {
         opacity: 0;
         position: absolute;
-        left: 50%;
+        left: 90%;
         transform: translate3d(-50%, -50%, 0);
-        top: 50%;
+        top: 40%;
         transition: opacity 1s;
-        max-width: 600px;
+        width: 100%;
+        margin: 2em 0;
     }
+    
 
     figcaption {
         display: block;
@@ -124,7 +126,7 @@ var{
         color: silver;
         transition: color .4s linear;
         transform: translatey(-50%);
-        top: 50%;
+        top: 45%;
         padding: .5rem;
         font-size: 3rem;
         background: none;
@@ -141,30 +143,47 @@ var{
     }
 
     .precedent {
-        left: -300px;
+        left: 30%;
     }
 
     .suivant {
-        right: -310px
+        right: 30%;
     }
 
     .play {
+        left: 50%;
         font-size: large;
-        top: 100%;
+        top: 70%;
         position: absolute;
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    @media (max-width: 768px){
+        figure{
+            left: 60%;
+        }
+        .precedent{
+            left: 10%;
+        }
+        .suivant{
+            right: 10%;
+        }
+        .play{
+            top: 60%;
+        }
     }
 
 
 
     /*Carte interactive*/
     #mapreserv {
-        position: relative;
+        position: static;
         display: flex;
         flex-direction: row;
         height: 500px;
+        margin-top: 2em;
+        
     }
 
     #map {
@@ -229,13 +248,17 @@ var{
         border-radius: 1em;
         background-color: green;
     }
-
+    
+    
     canvas {
         display: none;
-        width: 80%;
-        height: 250px;
+        width: 300px;
+        height: 200px;
         border: 1px solid green;
         margin-bottom: 1em;
+    }
+    #canvas1{
+        display: none;
     }
     #annulvalid{
         display: flex;

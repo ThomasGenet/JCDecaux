@@ -37,9 +37,11 @@ class Map {
                         request2.onreadystatechange = function () {
                             if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
                                 var response2 = JSON.parse(this.responseText);
-                                console.log(response2);
+                                
                                 const nom = document.getElementById("namestation");
                                 nom.innerHTML = response2.name;
+                                sessionStorage.setItem('namestation', document.getElementById('namestation').textContent);
+                                
                                 const adresse = document.getElementById("adress");
                                 adresse.innerHTML = response2.address;
                                 const nbbike = document.getElementById("nb_bike");
@@ -52,11 +54,13 @@ class Map {
                                 let btnInfoReserver = document.getElementById('reserver');
                                 if (nbbike < 1) {
                                     btnInfoReserver.style.display = 'none';
-                                    console.log('none')
+                                    
 
                                 } else {
                                     btnInfoReserver.style.display = 'block';
                                 }
+                                
+                                
                             }
                         }
                         request2.open("GET", "https://api.jcdecaux.com/vls/v3/stations/" + number + "?contract=bruxelles&apiKey=ab8ddcadd4505d6df9e077b7e932033e531013fa");
