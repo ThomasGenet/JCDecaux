@@ -30,7 +30,6 @@ class Map {
 
 
                     monMarker.markerStation.addEventListener("click", function () {
-                        // alert ('click');
                         const number = station.number;
 
                         let request2 = new XMLHttpRequest();
@@ -71,9 +70,6 @@ class Map {
                 this.maCarte.addLayer(markers);
             }
         };
-        // https://api.jcdecaux.com/vls/v1/stations?contract=lille&apiKey=ab8ddcadd4505d6df9e077b7e932033e531013fa
-        //https://api.jcdecaux.com/vls/v3/stations?contract=bruxelles&apiKey=ab8ddcadd4505d6df9e077b7e932033e531013fa
-        //https://api.jcdecaux.com/vls/v3/contracts?apiKey=ab8ddcadd4505d6df9e077b7e932033e531013fa
         request.open("GET", "https://api.jcdecaux.com/vls/v3/stations?contract=bruxelles&apiKey=ab8ddcadd4505d6df9e077b7e932033e531013fa");
         request.send();
     }

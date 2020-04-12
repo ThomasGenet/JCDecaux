@@ -1,10 +1,7 @@
 class Timer {
     constructor(min, sec) {
         this.min = min;
-        this.sec = sec;
-        //sessionStorage.setItem('min', min);
-        //sessionStorage.setItem('sec', sec);
-        
+        this.sec = sec;   
     }
     timeout() {
         var timerElt = document.getElementById('time');

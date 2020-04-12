@@ -1,322 +1,397 @@
-a,abbr,acronym,address,applet,article,aside,audio,
-b,blockquote,big,body,center,canvas,caption,cite,code,command,
-datalist,dd,del,details,dfn,dl,div,dt, 
-em,embed,
-fieldset, figcaption, figure, font, footer, form, 
-h1, h2, h3, h4, h5, h6, header, hgroup, html,
-i, iframe, img, ins,
-kbd, 
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+blockquote,
+big,
+body,
+center,
+canvas,
+caption,
+cite,
+code,
+command,
+datalist,
+dd,
+del,
+details,
+dfn,
+dl,
+div,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+font,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
 keygen,
-label, legend, li, 
+label,
+legend,
+li,
 meter,
 nav,
-object, ol, output,
-p, pre, progress,
-q, 
-s, samp, section, small, span, source, strike, strong, sub, sup,
-table, tbody, tfoot, thead, th, tr, tdvideo, tt,
-u, ul, 
-var{
+object,
+ol,
+output,
+p,
+pre,
+progress,
+q,
+s,
+samp,
+section,
+small,
+span,
+source,
+strike,
+strong,
+sub,
+sup,
+table,
+tbody,
+tfoot,
+thead,
+th,
+tr,
+tdvideo,
+tt,
+u,
+ul,
+var {
     background: transparent;
     font-size: 100%;
     border: 0 none;
     margin: 0;
     padding: 0;
     vertical-align: baseline;
-    }
+}
 
-    body {
-        display: flex;
-        flex-flow: column;
-    }
+body {
+    display: flex;
+    flex-flow: column;
+}
 
-    /*Navigation*/
-    nav {
-        background-color: #fff;
-        width: 100%;
-        height: 3em;
-        border-bottom: 1px solid black;
-        position: fixed;
-        z-index: 99;
-    }
+/*Navigation*/
+nav {
+    background-color: #fff;
+    width: 100%;
+    height: 3em;
+    border-bottom: 1px solid black;
+    position: fixed;
+    z-index: 99;
+}
 
-    nav img {
-        position: absolute;
-        left: 20%;
-        width: 8em;
-        height: 3em;
-    }
+nav img {
+    position: absolute;
+    left: 20%;
+    width: 8em;
+    height: 3em;
+}
 
-    ul {
-        display: flex;
-        flex-direction: row;
-        position: absolute;
-        left: 70%;
-        margin-top: 10px;
-    }
+ul {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 70%;
+    margin-top: 10px;
+}
 
-    li,
-    li a {
-        padding: 5px;
-        text-decoration: none;
-        list-style: none;
-        color: black;
-        font-size: 20px;
-    }
+li,
+li a {
+    padding: 5px;
+    text-decoration: none;
+    list-style: none;
+    color: black;
+    font-size: 20px;
+}
 
 
-    /* Diaporama*/
-    h1 {
-        display: flex;
-        position: relative;
-        padding: 10px;
-        margin: auto;
-        font-size: 25px;
-    }
+/* Diaporama*/
+h1 {
+    display: flex;
+    position: relative;
+    padding: 10px;
+    margin: auto;
+    font-size: 25px;
+}
 
-    .line {
-        border-bottom: 1px solid green;
-        width: 20em;
-        position: relative;
-        margin-bottom: 2em;
-    }
+.line {
+    border-bottom: 1px solid green;
+    width: 20em;
+    position: relative;
+    margin-bottom: 2em;
+}
 
-    #diaporama {
-        height: 10%;
-        width: 100%;
-        max-width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-flow: column;
-        margin-bottom: 40px;
-        margin-top: 4em;
-    }
+#diaporama {
+    height: 10%;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    margin-bottom: 40px;
+    margin-top: 4em;
+}
 
-    .cadrediapo {
-        height: 500px;
-        width: 100%;
-        position: static;
-        
-    }
+.cadrediapo {
+    height: 500px;
+    width: 100%;
+    position: static;
 
+}
+
+figure {
+    opacity: 0;
+    position: absolute;
+    left: 80%;
+    transform: translate3d(-50%, -50%, 0);
+    top: 55%;
+    transition: opacity 1s;
+    width: 100%;
+    margin: 2em 0;
+}
+
+
+figcaption {
+    display: block;
+    top: 10em;
+    left: 25em;
+    position: absolute;
+    color: #000;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.precedent,
+.suivant {
+    color: silver;
+    transition: color .4s linear;
+    transform: translatey(-50%);
+    top: 55%;
+    padding: .5rem;
+    font-size: 3rem;
+    background: none;
+    position: absolute;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+.precedent:hover,
+.suivant:hover {
+    color: black
+}
+
+.precedent {
+    left: 30%;
+}
+
+.suivant {
+    right: 30%;
+}
+
+.play {
+    left: 50%;
+    font-size: large;
+    top: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
     figure {
-        opacity: 0;
-        position: absolute;
-        left: 90%;
-        transform: translate3d(-50%, -50%, 0);
-        top: 40%;
-        transition: opacity 1s;
-        width: 100%;
-        margin: 2em 0;
-    }
-    
-
-    figcaption {
-        display: block;
-        top: 10em;
-        left: 25em;
-        position: absolute;
-        color: #000;
-        background-color: rgba(255, 255, 255, 0.5);
-    }
-
-    .precedent,
-    .suivant {
-        color: silver;
-        transition: color .4s linear;
-        transform: translatey(-50%);
-        top: 45%;
-        padding: .5rem;
-        font-size: 3rem;
-        background: none;
-        position: absolute;
-        border: none;
-        text-decoration: none;
-        cursor: pointer;
-
-    }
-
-    .precedent:hover,
-    .suivant:hover {
-        color: black
+        left: 60%;
     }
 
     .precedent {
-        left: 30%;
+        left: 10%;
     }
 
     .suivant {
-        right: 30%;
+        right: 10%;
     }
 
     .play {
+        top: 60%;
+    }
+}
+
+
+
+/*Carte interactive*/
+#mapreserv {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+    margin-top: 2em;
+
+}
+
+#map {
+    /* la carte DOIT avoir une hauteur sinon elle n'apparaît pas */
+    height: 700px;
+    max-width: 100%;
+    width: 70%;
+    margin: auto;
+    z-index: 98;
+}
+
+/*Info station*/
+#infostation {
+    border: solid 1px green;
+    width: 30%;
+    height: 700px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: initial;
+    flex-direction: column;
+}
+
+#infostation h3 {
+    font-size: x-large;
+}
+
+#infostation h3,
+#infostation div {
+    margin: 0 2em 1em 2em;
+}
+
+#infostation p,
+#infostation span {
+    font-size: large;
+}
+
+#infostation p {
+    color: green;
+}
+
+#infostation span {
+    color: #000;
+}
+
+#form {
+
+    display: flex;
+    flex-direction: column;
+    margin: 2em;
+}
+
+#form input {
+    height: 2em;
+}
+
+#form #reserver {
+    display: none;
+    width: 100%;
+    height: 3em;
+    margin: 1em 0;
+    border-radius: 1em;
+    background-color: green;
+}
+
+
+canvas {
+    display: none;
+    width: 300px;
+    height: 200px;
+    border: 1px solid green;
+    margin-bottom: 1em;
+}
+
+#canvas1 {
+    display: none;
+}
+
+#annulvalid {
+    display: flex;
+    flex-direction: row;
+    display: none;
+}
+
+#timer {
+    position: relative;
+    top: 15em;
+    margin: auto;
+    padding: 1em 10em;
+    border: 1px solid green;
+}
+
+/*Footer*/
+footer {
+    background-color: #a5a5a5;
+    color: #fff;
+    text-align: center;
+    margin-top: 20em;
+    height: 5em;
+}
+
+footer p {
+    position: absolute;
+    left: 50%;
+    margin-top: 2em;
+}
+
+@media (max-width:900px) {
+    body {
+        margin: 0;
+    }
+
+    /*Nav*/
+    nav img {
+        left: 0;
+    }
+
+    nav ul {
         left: 50%;
-        font-size: large;
-        top: 70%;
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    @media (max-width: 768px){
-        figure{
-            left: 60%;
-        }
-        .precedent{
-            left: 10%;
-        }
-        .suivant{
-            right: 10%;
-        }
-        .play{
-            top: 60%;
-        }
     }
 
+    /*Cadre diapo*/
 
-
-    /*Carte interactive*/
+    /*Map*/
     #mapreserv {
-        position: static;
         display: flex;
-        flex-direction: row;
-        height: 500px;
-        margin-top: 2em;
-        
-    }
-
-    #map {
-        /* la carte DOIT avoir une hauteur sinon elle n'apparaît pas */
-        height: 700px;
-        max-width: 100%;
-        width: 70%;
-        margin: auto;
-        z-index: 98;
-    }
-
-    /*Info station*/
-    #infostation {
-        border: solid 1px green;
-        width: 30%;
-        height: 700px;
-        margin: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: initial;
         flex-direction: column;
+        height: 100%;
     }
 
-    #infostation h3 {
-        font-size: x-large;
-    }
-
-    #infostation h3,
-    #infostation div {
-        margin: 0 2em 1em 2em;
-    }
-
-    #infostation p,
-    #infostation span {
-        font-size: large;
-    }
-
-    #infostation p {
-        color: green;
-    }
-
-    #infostation span {
-        color: #000;
+    #infostation {
+        width: 80%;
+        height: 100%;
     }
 
     #form {
-        
-        display: flex;
-        flex-direction: column;
-        margin: 2em;
-    }
-    #form input{
-        height: 2em;
+        width: 50%;
     }
 
-    #form #reserver {
-        display: none;
-        width: 100%;
-        height: 3em;
-        margin: 1em 0;
-        border-radius: 1em;
-        background-color: green;
+    #timer {
+        padding: 2em;
     }
-    
-    
-    canvas {
-        display: none;
-        width: 300px;
-        height: 200px;
-        border: 1px solid green;
-        margin-bottom: 1em;
-    }
-    #canvas1{
-        display: none;
-    }
-    #annulvalid{
-        display: flex;
-        flex-direction: row;
-        display: none;
-    }
-    #timer{
-        position: relative;
-        top: 15em;
-        margin: auto;
-        padding: 1em 10em;
-        border: 1px solid green;
-    }
-
-    /*Footer*/
-    footer {
-        background-color: #a5a5a5;
-        color: #fff;
-        text-align: center;
-        margin-top: 20em;
-        height: 5em;
-    }
-
-    footer p {
-        position: absolute;
-        left: 50%;
-        margin-top: 2em;
-    }
-
-    @media (max-width:900px) {
-        body{
-            margin: 0;
-        }
-        /*Nav*/
-        nav img{
-            left: 0;
-        }
-        nav ul{
-            left: 50%;
-        }
-        /*Cadre diapo*/
-
-        /*Map*/
-        #mapreserv {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        #infostation {
-            width: 80%;
-            height: 100%;
-        }
-
-        #form {
-            width: 50%;
-        }
-        #timer{
-            padding: 2em;
-        }
-    }
+}

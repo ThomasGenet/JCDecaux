@@ -107,16 +107,16 @@ class Main {
 		let validcanvas = document.getElementById('valider');
 
 		validcanvas.addEventListener('click', function (e) {
-			//alert('click');
+			
 			if (canvastouch.vide === true) {
-				//alert('signature');
+				
 				canvas.style.display = "none";
 				actioncanvas.style.display = "none";
 				timer.stop();
 				timer.min = 2;
 				timer.sec = 0;
 				timer.timeout();
-				//sessionStorage.setItem('time', document.getElementById('time').textContent);
+				
 
 				var stationname = sessionStorage.getItem('namestation');
 				lieu.innerHTML = stationname;
