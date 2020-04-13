@@ -168,7 +168,7 @@ figure {
     position: absolute;
     left: 50%;
     transform: translate3d(-50%, -50%, 0);
-    top: 66%;
+    top: 40%;
     transition: opacity 1s;
     width: 100%;
     margin: 2em 0;
@@ -180,7 +180,7 @@ figure {
 figcaption {
     display: block;
     top: 70%;
-    left: 53em;
+    left: 60%;
     position: absolute;
     color: #000;
     background-color: rgba(255, 255, 255, 0.5);
@@ -191,7 +191,7 @@ figcaption {
     color: silver;
     transition: color .4s linear;
     transform: translatey(-50%);
-    top: 75%;
+    top: 45%;
     padding: .5rem;
     font-size: 3rem;
     background: none;
@@ -208,17 +208,17 @@ figcaption {
 }
 
 .precedent {
-    left: 30%;
+    left: 10%;
 }
 
 .suivant {
-    right: 30%;
+    right: 10%;
 }
 
 .play {
     left: 50%;
     font-size: large;
-    top: 120%;
+    top: 100%;
     position: absolute;
     display: flex;
     align-items: center;
@@ -367,12 +367,14 @@ footer {
     text-align: center;
     margin-top: 20em;
     height: 5em;
+    display: flex;
+    justify-content: center;
 }
 
 footer p {
     position: absolute;
-    left: 50%;
     margin-top: 2em;
+    
 }
 
 @media (max-width:900px) {
