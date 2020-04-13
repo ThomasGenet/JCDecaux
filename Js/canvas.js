@@ -92,7 +92,7 @@ class Canvas {
         }, false);
         this.canvas.addEventListener('touchmove', (e) => {
             e.preventDefault();
-            this.finger = true;
+            
             this.draw(e);
         }, false);
         this.vide = true;

@@ -53,12 +53,15 @@ class Map {
                                 let btnInfoReserver = document.getElementById('reserver');
                                 if (nbbike < 1) {
                                     btnInfoReserver.style.display = 'none';
-                                    
-
                                 } else {
                                     btnInfoReserver.style.display = 'block';
                                 }
-                                
+
+                                if(status.textContent == "CLOSED"){
+                                    btnInfoReserver.style.display = 'none';
+                                } else {
+                                    btnInfoReserver.style.display = 'block';
+                                }
                                 
                             }
                         }
